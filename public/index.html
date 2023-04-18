@@ -10,14 +10,18 @@
   <body>
     <div id="app"></div>
     <script>
-      require.config({
-        paths: {
+      ((window) => {
+        const allPaths = {};
+        window.requirePaths = function requirePaths(paths) {
+          require.config({ paths: { ...allPaths, ...paths } });
+        };
+        requirePaths({
           platform: "index",
           react: "https://unpkg.com/react@18.2.0/umd/react.production.min",
           "react-dom":
             "https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min",
-        },
-      });
+        });
+      })(window);
       require(["platform"]);
     </script>
   </body>

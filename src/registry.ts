@@ -5,7 +5,7 @@ const registryData = [
     render: "react",
     group: "system",
     type: "按钮",
-    url: "http://127.0.0.1:3001/index.js",
+    url: "http://127.0.0.1:3001/react/comp2/index.js",
   },
   {
     render: "platform",
